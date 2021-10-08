@@ -1,0 +1,233 @@
+/* 27. Méndez Méndez Alondra Daniela 5J 
+    TEMA: WebMaster - DISEÑO: 7
+*/
+@font-face {
+    font-family: 'CupcakeSmile';
+    src: url(font/Cupcake\ Smiles.woff);
+}
+body{
+    font-family: 'Exotc350 DmBd BT';
+    margin: 0;
+}
+
+/* HEADER/ENCABEZADO */
+.header{
+    grid-area: header;
+    background-color: #002060;
+}
+#logo{
+    height: 160px;
+    margin-left: 10px;
+}
+h2{
+    float: right;
+    color: white;
+    font-size: 35px;
+    text-align: right;
+    padding: 10px;
+    margin: 0;
+    font-family: 'Exotc350 Bd BT';
+}
+/* BARRA DE NAVEGACIÓN */
+.navbar{
+    grid-area: navbar;
+    width: 100%;
+	text-align: center;
+}
+nav a{
+    background-color: #9DC3E6;
+    color: #002060;
+    text-decoration: none;
+	padding: 10px 60px;
+    display: inline-block;
+    font-size: 30px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.focus{
+    background-color: #002060;
+    color: white;
+}
+nav a:hover{
+    background-color: #2F5597;
+    color: white;
+}
+/* ASIDE/LATERAL */
+.aside{
+    grid-area: aside;
+    background-color: #9DC3E6;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    font-family: 'CupcakeSmile';
+    font-size: 30px;
+}
+.aside p{
+    background-color: white;
+    color: #203864;
+    border-radius: 50px;
+    padding: 20px;
+    text-align: center;
+}
+aside img{
+    width: 100%;
+    object-fit: cover;
+}
+h3{
+    font-family: 'Exotc350 Bd BT';
+    color: #002060;
+    font-size: 35px;
+    margin: 10px;
+    text-align: center;
+}
+/* SECCIÓN */
+.section{
+    grid-area: section;
+    background-color: #BDD7EE;
+    margin: 10px;
+    padding: 10px;
+}
+/* ARTICULO */
+article{
+    background-color: #9DC3E6;
+    margin: 10px;
+    padding: -10px;
+    font-family: 'CupcakeSmile';
+    font-size: 30px;
+    border-radius: 10px;
+    display: flex;
+}
+article:hover{
+    box-shadow: white -30px 0px;
+    margin-left: 30px;
+    transition: 0.5s;
+}
+h4{
+    margin: 0;
+    color: white;
+    background: #002060;
+    padding: 10px;
+    border-radius: 0px 10px 0px 0px;
+    font-family: 'Exotc350 DmBd BT';
+    text-align: right;
+}
+#icon{
+    margin-bottom: -10px;
+}
+#articleimg{
+    margin: 0;
+    border-radius: 10px 0 0 10px;
+    width: 50%;
+    object-fit: cover;
+}
+p{
+    padding: 10px;
+    margin: 0;
+    text-align: right;
+}
+/* PIE DE PÁGINA */
+.footer{
+    grid-area: footer;
+    background-color: #002060;
+    text-align: center;
+    padding: 10px;
+}
+h5{
+    margin: 0;
+    color: white;
+    font-size: 20px;
+}
+/* MAQUETACIÓN DE LA PÁGINA */
+/* PANTALLA GRANDE (COMPUTADORA) */
+.grid-cont{
+    display: grid;
+    gap: 10px;
+    grid-template: 
+    "header header " 150px
+    "navbar navbar " auto
+    "aside  section " auto
+    "footer footer" auto/
+    25%   auto
+    ;
+}
+
+/* DISEÑO RESPONSIVO */
+/* Modifica ciertos elementos para adaptarse al tipo de pantalla */
+/* PANTALLA MEDIANA */
+@media(max-width: 1199px) and (min-width: 991px){
+    nav a{
+        padding: 10px 30px;
+    }
+    .grid-cont{
+        grid-template: 
+        "header header " 150px
+        "navbar navbar " auto
+        "aside  section " auto
+        "footer footer" auto/
+        25%   auto
+        ;
+    }
+}
+/* PANTALLA PEQUEÑA (TABLET) */
+@media(max-width: 991px) and (min-width: 767px){
+    nav a{
+        padding: 10px 10px;
+    }
+    .grid-cont{
+        grid-template: 
+        "header " 150px
+        "navbar " auto
+        "aside  " auto
+        "section  " auto
+        "footer " auto
+        ;
+    }
+    .aside{
+        display: flex;
+    }
+    aside img{
+        object-fit: contain;
+    }
+    .aside p{
+        margin: 20px;
+        padding-top: 50px;
+    }
+}
+/* PANTALLA MUY PEQUEÑA (CELULAR) */
+@media(max-width: 767px){
+    .grid-cont{
+        grid-template: 
+        "header " 150px
+        "navbar " auto
+        "aside  " auto
+        "section  " auto
+        "footer " auto
+        ;
+    }
+    nav a{
+        display: block;
+        border: 3px solid #2F5597;
+    }
+    #logo{
+        object-fit: cover;
+        width: 300px;
+    }
+    h2{
+        display: none;
+    }
+    article{
+        display: block;
+    }
+    #articleimg{
+        width: 100%;
+        height: 200px;
+        border-radius: 10px 10px 0px 0;
+    }
+    h4{
+        border-radius: 0;
+    }
+}
+h1{
+    margin: 0;
+    color: white;
+}
